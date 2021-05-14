@@ -13,7 +13,7 @@ class MysqlPipeline():
     def open_spider(self, spider):
         #打开管道，连接到mysql数据库，如果没有book和review数据表，就创建
         user = "root"
-        password = "qwer4371273"
+        password = "password"
         database = "amazon"
         port = 3306
         self.conn = pymysql.Connect(host='127.0.0.1', port = port, user = user, password = password, db=database,charset='utf8')
@@ -34,6 +34,7 @@ class MysqlPipeline():
                 star tinyint,
                 content mediumtext)
                  """)
+            self.conn.commit()
         except Exception as e:
             self.conn.rollback()
 

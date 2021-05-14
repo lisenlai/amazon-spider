@@ -67,9 +67,9 @@ class seleniumDownloadMiddleware:
         #购买的是engeniusiot.com的ip套餐，根据获取的ip构建ip池，每两分半钟更新一次，请根据自己的套餐修改相关参数
         self.proxys = []
         now = int(time.mktime(datetime.datetime.now().timetuple()))
-        order_id = "48679"
+        order_id = ""
         username = "清水雕饰"
-        password = str(hashlib.md5("qwer4371273".encode(encoding="UTF-8")).hexdigest())
+        password = str(hashlib.md5("password".encode(encoding="UTF-8")).hexdigest())
         timestamp = str(now)
         md = str(hashlib.md5((username+order_id+password+timestamp).encode(encoding='UTF-8')).hexdigest())
         num = 20
